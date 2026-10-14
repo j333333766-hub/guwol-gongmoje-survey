@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>교직원 의견 조사 · 구월중학교</title>
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<main>
+  <section class="card">
+    <div class="kicker">구월중학교 · 교직원</div>
+    <h1>2027. 3. 1.자 교장공모제 학교 지정 신청에 대한 교직원 의견 조사</h1>
+    <p>2027. 3. 1.자 교장공모제 학교 지정 신청에 대한 교직원들의 의견을 수렴합니다. 우리 학교의 현안 사업 해결과 발전 방안 모색을 위한 교장공모제 지정 여부에 대하여 심사숙고하신 후 답변해 주시기 바랍니다. 감사합니다.</p>
+    <p class="sub">2026년 10월 16일 &nbsp;구월중학교장</p>
+    <span class="due">제출기한: 2026년 10월 22일(목)까지</span>
+    <details>
+      <summary>교장공모제 안내</summary>
+      <ul>
+        <li>개별 학교의 현황과 여건에 맞는 공모교장 요건을 공고한 뒤, 지원자 중 적격자를 심사하여 해당 학교의 교장으로 임용하는 제도입니다.</li>
+        <li>임용기간: 2027. 3. 1. ~ 2031. 2. 28.(4년)</li>
+        <li>공모 유형: 초빙형(일반학교) — 교장자격증 소지자(교육공무원)</li>
+        <li>절차: 교직원·학부모 의견수렴 → 학교운영위원회 심의 → 지정 신청 → 교육청 지정 통보</li>
+      </ul>
+    </details>
+  </section>
+
+  <div id="again" class="notice hidden">이 기기에서 이미 제출한 기록이 있습니다. 한 분이 한 번만 참여해 주세요. (같은 컴퓨터를 쓰는 다른 선생님이라면 그대로 제출하시면 됩니다.)</div>
+
+  <form class="card" data-type="staff" novalidate>
+    <h2>2027. 3. 1.자 교장공모제 학교 지정 신청에 대한 의견서</h2>
+    <label class="q">1. 교장공모제 신청에 대한 의견</label>
+    <div class="choices">
+      <label class="choice yes"><input type="radio" name="opinion" value="찬성"><span>신청 찬성</span></label>
+      <label class="choice no"><input type="radio" name="opinion" value="반대"><span>신청 반대</span></label>
+    </div>
+    <label class="q" for="req" style="margin-top:20px">2. 공모교장 찬성 시 공모교장의 요건</label>
+    <textarea id="req" name="requirement" maxlength="1000" placeholder="의견이 있을 경우만 구체적으로 적어 주세요."></textarea>
+    <p class="hint">이름 등 개인정보는 받지 않습니다. 응답은 익명으로 집계됩니다.</p>
+    <p class="hint">※ 설문조사 결과 조작 의혹이 제기되는 경우 교장공모제 지정 철회 또는 절차상 오류로 인해 공모교장 임명이 제한될 수 있으니, 한 분이 한 번만 참여해 주세요.</p>
+    <button type="submit" style="margin-top:12px">제출하기</button>
+    <div class="err" role="alert"></div>
+  </form>
+
+  <section id="done" class="card done hidden">
+    <div class="big">✓</div>
+    <h2>제출되었습니다</h2>
+    <p class="sub">의견을 주셔서 감사합니다.</p>
+  </section>
+  <section id="closed" class="card done hidden">
+    <h2>설문이 마감되었습니다</h2>
+    <p class="sub">제출기한(2026년 10월 22일)이 지났습니다.</p>
+  </section>
+  <p class="foot">구월중학교 · 2027. 3. 1.자 교장공모제 의견 조사</p>
+</main>
+</body>
+</html>
