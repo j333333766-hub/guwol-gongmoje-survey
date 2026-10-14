@@ -78,8 +78,16 @@
   <p class="foot">구월중학교 · 2027. 3. 1.자 교장공모제 학부모 의견 조사</p>
 </main>
 <script>
+  // 학년별 학급 수: 1학년 10반, 2·3학년 11반
+  const CLASSES = { 1: 10, 2: 11, 3: 11 };
+  const grade = document.querySelector('select[name=grade]');
   const cls = document.querySelector('select[name=cls]');
-  for (let i = 1; i <= 12; i++) cls.insertAdjacentHTML('beforeend', `<option value="${i}">${i}반</option>`);
+  grade.addEventListener('change', () => {
+    const keep = cls.value;
+    cls.innerHTML = '<option value="">반</option>';
+    for (let i = 1; i <= (CLASSES[grade.value] || 0); i++) cls.insertAdjacentHTML('beforeend', `<option value="${i}">${i}반</option>`);
+    if (keep && Number(keep) <= (CLASSES[grade.value] || 0)) cls.value = keep;
+  });
 </script>
 </body>
 </html>
