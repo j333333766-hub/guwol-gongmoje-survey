@@ -1,6 +1,6 @@
 // 공통 제출 로직. 각 페이지는 <form data-type="staff|parent">를 둔다.
 const ENDPOINT = 'https://script.google.com/macros/s/AKfycbz1CWduvR9HgTP7Ugr6bgZT-Rp34GgJwTpG4KpI0jp8ibb-Vy2KC1ij0v5VDDnIMTvF/exec';
-const CLOSE_AT = new Date('2026-10-22T23:59:59+09:00');
+const CLOSE_AT = new Date('2026-10-27T18:00:00+09:00');
 
 function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
 
