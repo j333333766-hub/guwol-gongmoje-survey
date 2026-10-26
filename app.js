@@ -10,14 +10,20 @@ function deviceId() {
   return id;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+// 화면의 마감 시각이 지났으면 서버에 한 번 더 물어 본다(캐시된 옛 파일 대비, 서버 판단이 우선).
+async function isOpen() {
+  if (new Date() <= CLOSE_AT) return true;
+  try { const res = await fetch(ENDPOINT, { cache: 'no-store' }); return !!(await res.json()).open; } catch (e) { return false; }
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
   const form = document.querySelector('form[data-type]');
   if (!form) return;
   const type = form.dataset.type;
   const err = form.querySelector('.err');
   const btn = form.querySelector('button');
 
-  if (new Date() > CLOSE_AT) {
+  if (!(await isOpen())) {
     form.classList.add('hidden');
     document.getElementById('closed').classList.remove('hidden');
     return;
